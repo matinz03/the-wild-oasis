@@ -1,10 +1,10 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 const StyledMenu = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
-`;
+`
 
 const StyledToggle = styled.button`
   background: none;
@@ -23,7 +23,7 @@ const StyledToggle = styled.button`
     height: 2.4rem;
     color: var(--color-grey-700);
   }
-`;
+`
 
 const StyledList = styled.ul`
   position: fixed;
@@ -32,9 +32,9 @@ const StyledList = styled.ul`
   box-shadow: var(--shadow-md);
   border-radius: var(--border-radius-md);
 
-  right: ${(props) => props.position.x}px;
-  top: ${(props) => props.position.y}px;
-`;
+  right: ${props => props.position.x}px;
+  top: ${props => props.position.y}px;
+`
 
 const StyledButton = styled.button`
   width: 100%;
@@ -59,4 +59,4 @@ const StyledButton = styled.button`
     color: var(--color-grey-400);
     transition: all 0.3s;
   }
-`;
+`

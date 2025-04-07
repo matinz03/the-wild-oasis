@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import Button from "./Button";
-import Heading from "./Heading";
+import styled from 'styled-components'
+import Button from './Button'
+import Heading from './Heading'
 
 const StyledConfirmDelete = styled.div`
   width: 40rem;
@@ -18,7 +18,7 @@ const StyledConfirmDelete = styled.div`
     justify-content: flex-end;
     gap: 1.2rem;
   }
-`;
+`
 
 function ConfirmDelete({ resourceName, onConfirm, disabled }) {
   return (
@@ -38,7 +38,7 @@ function ConfirmDelete({ resourceName, onConfirm, disabled }) {
         </Button>
       </div>
     </StyledConfirmDelete>
-  );
+  )
 }
 
-export default ConfirmDelete;
+export default ConfirmDelete

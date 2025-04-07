@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 const ButtonText = styled.button`
   color: var(--color-brand-600);
@@ -13,6 +13,6 @@ const ButtonText = styled.button`
   &:active {
     color: var(--color-brand-700);
   }
-`;
+`
 
-export default ButtonText;
+export default ButtonText

@@ -1,5 +1,5 @@
-import Heading from "../ui/Heading";
-import Row from "../ui/Row";
+import Heading from '../ui/Heading'
+import Row from '../ui/Row'
 
 function Dashboard() {
   return (
@@ -7,7 +7,7 @@ function Dashboard() {
       <Heading as="h1">Dashboard</Heading>
       <p>TEST</p>
     </Row>
-  );
+  )
 }
 
-export default Dashboard;
+export default Dashboard

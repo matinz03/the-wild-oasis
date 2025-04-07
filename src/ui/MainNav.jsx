@@ -1,17 +1,17 @@
-import { NavLink } from "react-router-dom";
-import styled from "styled-components";
+import { NavLink } from 'react-router-dom'
+import styled from 'styled-components'
 import {
   HiOutlineCalendarDays,
   HiOutlineCog6Tooth,
   HiOutlineHome,
   HiOutlineHomeModern,
   HiOutlineUsers,
-} from "react-icons/hi2";
+} from 'react-icons/hi2'
 const NavList = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
-`;
+`
 
 const StyledNavLink = styled(NavLink)`
   &:link,
@@ -50,7 +50,7 @@ const StyledNavLink = styled(NavLink)`
   &.active:visited svg {
     color: var(--color-brand-600);
   }
-`;
+`
 function MainNav() {
   return (
     <nav>
@@ -87,7 +87,7 @@ function MainNav() {
         </li>
       </NavList>
     </nav>
-  );
+  )
 }
 
-export default MainNav;
+export default MainNav
