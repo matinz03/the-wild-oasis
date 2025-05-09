@@ -1,19 +1,23 @@
 import { useForm } from 'react-hook-form'
-import Button from '../../ui/Button'
-import Form from '../../ui/Form'
-import FormRow from '../../ui/FormRow'
-import Input from '../../ui/Input'
-
+import Button from 'ui/Button'
+import Form from 'ui/Form'
+import FormRow from 'ui/FormRow'
+import Input from 'ui/Input'
 import { useUpdateUser } from './useUpdateUser'
 
 function UpdatePasswordForm() {
   const { register, handleSubmit, formState, getValues, reset } = useForm()
   const { errors } = formState
 
-  const { updateUser, isUpdating } = useUpdateUser()
+  const { mutate: updateUser, isLoading: isUpdating } = useUpdateUser()
 
   function onSubmit({ password }) {
-    updateUser({ password }, { onSuccess: reset })
+    updateUser({ password }, { onSuccess: () => reset() })
+  }
+
+  function handleReset(e) {
+    // e.preventDefault();
+    reset()
   }
 
   return (
@@ -25,6 +29,7 @@ function UpdatePasswordForm() {
         <Input
           type="password"
           id="password"
+          // this makes the form better for password managers
           autoComplete="current-password"
           disabled={isUpdating}
           {...register('password', {
@@ -54,7 +59,7 @@ function UpdatePasswordForm() {
         />
       </FormRow>
       <FormRow>
-        <Button onClick={reset} type="reset" variation="secondary">
+        <Button onClick={handleReset} type="reset" variation="secondary">
           Cancel
         </Button>
         <Button disabled={isUpdating}>Update password</Button>

@@ -7,6 +7,7 @@ import {
   HiOutlineHomeModern,
   HiOutlineUsers,
 } from 'react-icons/hi2'
+
 const NavList = styled.ul`
   display: flex;
   flex-direction: column;
@@ -51,6 +52,7 @@ const StyledNavLink = styled(NavLink)`
     color: var(--color-brand-600);
   }
 `
+
 function MainNav() {
   return (
     <nav>
@@ -64,7 +66,7 @@ function MainNav() {
         <li>
           <StyledNavLink to="/bookings">
             <HiOutlineCalendarDays />
-            <span>Booking</span>
+            <span>Bookings</span>
           </StyledNavLink>
         </li>
         <li>
