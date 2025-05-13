@@ -1,10 +1,10 @@
-import { useUser } from 'features/authentication/useUser'
+import { useUser } from './useUser'
 import { useState } from 'react'
-import Button from 'ui/Button'
-import FileInput from 'ui/FileInput'
-import Form from 'ui/Form'
-import FormRow from 'ui/FormRow'
-import Input from 'ui/Input'
+import Button from '../../ui/Button'
+import FileInput from '../../ui/FileInput'
+import Form from '../../ui/Form'
+import FormRow from '../../ui/FormRow'
+import Input from '../../ui/Input'
 import { useUpdateUser } from './useUpdateUser'
 
 function UpdateUserDataForm() {
@@ -19,7 +19,7 @@ function UpdateUserDataForm() {
   const [fullName, setFullName] = useState(currentFullName)
   const [avatar, setAvatar] = useState(null)
 
-  const { mutate: updateUser, isLoading: isUpdating } = useUpdateUser()
+  const { updateUser, isUpdating } = useUpdateUser()
 
   function handleSubmit(e) {
     e.preventDefault()
@@ -37,7 +37,7 @@ function UpdateUserDataForm() {
     )
   }
 
-  function handleCancel(e) {
+  function handleCancel() {
     // We don't even need preventDefault because this button was designed to reset the form (remember, it has the HTML attribute 'reset')
     setFullName(currentFullName)
     setAvatar(null)

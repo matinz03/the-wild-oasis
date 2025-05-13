@@ -1,5 +1,5 @@
 import toast from 'react-hot-toast'
-import supabase from './supabase'
+import supabase, { supabaseUrl } from './supabase'
 
 export async function signup({ fullName, email, password }) {
   const { data, error } = await supabase.auth.signUp({
@@ -35,4 +35,28 @@ export async function getCurrentUser() {
 export async function logout() {
   const { error } = await supabase.auth.signOut()
   if (error) toast.error(error.message)
+}
+export async function updateCurrentUser({ password, fullName, avatar }) {
+  let updateData
+  if (password) updateData = { password }
+  if (fullName) updateData = { data: { fullName } }
+  const { data, error } = await supabase.auth.updateUser(updateData)
+  if (error) throw new Error(error.message)
+  if (!avatar) return data
+
+  const fileName = `avatar-${data.user.id}-${Math.random()}`
+  const { error: avatarStorageError } = await supabase.storage
+    .from('avatars')
+    .upload(fileName, avatar)
+  if (avatarStorageError)
+    throw new Error('Could not upload the avatar', error.message)
+  const { data: updatedUser, error: updatingAvatarError } =
+    await supabase.auth.updateUser({
+      data: {
+        avatar: `${supabaseUrl}/storage/v1/object/public/avatars/${fileName}`,
+      },
+    })
+  if (updatingAvatarError)
+    throw new Error('Could not set the avatar url into user', error.message)
+  return updatedUser
 }
