@@ -14,7 +14,7 @@ module.exports = {
   ignorePatterns: ['dist', '.eslintrc.cjs'],
   parserOptions: { ecmaVersion: 'latest', sourceType: 'module' },
   settings: { react: { version: '18.2' } },
-  plugins: ['react-refresh', 'prettier'], // Add Prettier plugin
+  plugins: [ 'prettier'], // Add Prettier plugin
   rules: {
     'no-unused-vars': 'warn',
     'react/prop-types': 'off',

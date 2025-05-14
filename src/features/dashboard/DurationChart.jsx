@@ -1,4 +1,4 @@
-import { useDarkMode } from 'context/DarkModeContext'
+import { useDarkMode } from '../../context/DarkModeContext'
 import {
   Cell,
   Legend,
@@ -8,11 +8,9 @@ import {
   Tooltip,
 } from 'recharts'
 import styled from 'styled-components'
-import { box } from 'styles/styles'
-import Heading from 'ui/Heading'
+import Heading from '../../ui/Heading'
 
 const ChartBox = styled.div`
-  ${box}
   padding: 2.4rem 3.2rem;
 
   grid-column: 3 / span 2;

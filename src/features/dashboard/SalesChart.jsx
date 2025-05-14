@@ -1,4 +1,4 @@
-import { useDarkMode } from 'context/DarkModeContext'
+import { useDarkMode } from '../../context/DarkModeContext'
 import { eachDayOfInterval, format, isSameDay, subDays } from 'date-fns'
 import {
   Area,
@@ -10,7 +10,7 @@ import {
   YAxis,
 } from 'recharts'
 import styled from 'styled-components'
-import Heading from 'ui/Heading'
+import Heading from '../../ui/Heading'
 import DashboardBox from './DashboardBox'
 
 const StyledSalesChart = styled(DashboardBox)`
@@ -60,7 +60,7 @@ function SalesChart({ bookings, numDays }) {
 
   return (
     <StyledSalesChart>
-      <Heading type="h2">
+      <Heading type=" h2">
         Sales from {format(allDates.at(0), 'MMM dd yyyy')} &mdash;{' '}
         {format(allDates.at(-1), 'MMM dd yyyy')}
       </Heading>

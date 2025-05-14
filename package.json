@@ -19,6 +19,7 @@
     "react-hot-toast": "^2.4.1",
     "react-icons": "^4.8.0",
     "react-router-dom": "^6.11.1",
+    "recharts": "^2.15.3",
     "styled-components": "^5.3.10"
   },
   "devDependencies": {
@@ -29,6 +30,7 @@
     "eslint-config-prettier": "^10.1.5",
     "eslint-config-react-app": "^7.0.1",
     "eslint-plugin-prettier": "^5.4.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
     "prettier": "^3.5.3",
     "vite": "^4.2.0",
     "vite-plugin-eslint": "^1.8.1"
