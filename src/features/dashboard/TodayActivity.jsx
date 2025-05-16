@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import Heading from '../../ui/Heading'
 import Row from '../../ui/Row'
 
-import { useTodayActivity } from './useTodayActivity'
+import { useTodayActivity } from '../check-in-out/useTodayActivity'
 import Spinner from '../../ui/Spinner'
 import TodayItem from './TodayItem'
 
